@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ShopList — мои покупки</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="app">
+<aside class="sidebar"><a class="brand" href="#" data-page="home"><span class="brand-icon">S</span>ShopList</a><nav>
+<button class="nav-item active" data-page="home"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v12h14V9"/></svg>Главная</button>
+<button class="nav-item" data-page="history"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>История</button>
+<button class="nav-item" data-page="stats"><svg viewBox="0 0 24 24"><path d="M4 20V11h4v9M10 20V4h4v16M16 20v-6h4v6"/></svg>Статистика</button>
+<button class="nav-item" data-page="feedback"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6.5A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg>Отзывы о сайте</button>
+<button class="nav-item" data-page="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 13.5 21 15l-2 4-2.5-1a8 8 0 0 1-2 1L14 21h-4l-.5-2a8 8 0 0 1-2-1L5 19l-2-4 2-1.5a7 7 0 0 1 0-2L3 10l2-4 2.5 1a8 8 0 0 1 2-1L10 4h4l.5 2a8 8 0 0 1 2 1L19 6l2 4-2 1.5a7 7 0 0 1 0 2Z"/></svg>Настройки</button></nav><div class="note"><b>♡</b><p>Покупки — это не просто трата денег, это забота о себе.</p></div><small class="side-foot">Твои покупки. В одном месте.</small></aside>
+<main><header><b class="mobile-brand">ShopList</b><span></span><button class="theme" id="themeToggle" aria-label="Сменить тему"><svg viewBox="0 0 24 24"><path d="M20 15a8.5 8.5 0 0 1-11-11A8.5 8.5 0 1 0 20 15Z"/></svg></button></header>
+<section id="homePage" class="page"><div class="welcome"><div><p class="eyebrow">ТВОЁ ПРОСТРАНСТВО ПОКУПОК</p><h1>Привет! 👋</h1><p class="muted">Что сегодня нужно купить?</p></div></div>
+<div class="heading"><div><h2>Мои магазины</h2><p>Все списки покупок в одном месте</p></div></div>
+<button class="add-main" id="addStoreMain"><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>Добавить магазин</button><div class="store-grid" id="storeGrid"></div><p class="empty" id="emptyHint">Здесь пока пусто. Добавь свой первый магазин 👆</p><div class="home-clear"><button type="button" id="clearAllHome">Очистить все списки</button></div>
+<div class="quick-section"><div class="heading"><div><h2>Быстрые действия</h2><p>Всё необходимое под рукой</p></div></div><div class="quick-grid">
+<button class="quick-card" data-action="add-store"><span class="quick-icon blue"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span>Добавить магазин</span><svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+<button class="quick-card" data-page="history"><span class="quick-icon violet"><svg viewBox="0 0 24 24"><path d="M4 8V3m0 5h5M4.5 8a8.5 8.5 0 1 1-1 7M12 7v5l3 2"/></svg></span><span>История покупок</span><svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+<button class="quick-card" data-page="stats"><span class="quick-icon pink"><svg viewBox="0 0 24 24"><path d="M4 20V11h4v9M10 20V4h4v16M16 20v-6h4v6"/></svg></span><span>Статистика</span><svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+<button class="quick-card" data-page="feedback"><span class="quick-icon cyan"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6.5A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span>Отзывы о сайте</span><svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+</div></div></section>
+<section id="historyPage" class="page hidden"><p class="eyebrow">ТВОИ ПОКУПКИ</p><h1>История покупок</h1><div class="placeholder"><h2>История пока пуста</h2><p>Здесь появятся завершённые покупки.</p></div></section>
+<section id="statsPage" class="page hidden"><p class="eyebrow">ТВОИ ФИНАНСЫ</p><h1>Статистика</h1>
+<div class="stats-filter"><label for="statsPeriod">Период</label><select id="statsPeriod"><option value="today">Сегодня</option><option value="yesterday">Вчера</option><option value="thisWeek">Эта неделя</option><option value="lastWeek">Прошлая неделя</option><option value="thisMonth" selected>Этот месяц</option><option value="lastMonth">Прошлый месяц</option><option value="all">Всё время</option></select></div>
+<div class="stats stats-real"><div><small>Потрачено</small><strong id="statsSpent">0 ₽</strong></div><div><small>Походов в магазин</small><strong id="statsTrips">0</strong></div><div><small>Куплено товаров</small><strong id="statsBoughtItems">0</strong></div><div><small>Средний чек</small><strong id="statsAverage">0 ₽</strong></div></div>
+<div class="stats-panel"><div class="stats-panel-head"><div><h2>Расходы по дням</h2><p id="statsPeriodLabel">За этот месяц</p></div></div><div id="statsDaily" class="stats-bars"></div></div>
+<div class="stats-panel"><div class="stats-panel-head"><div><h2>Где потрачено</h2><p>Расходы по магазинам за выбранный период</p></div></div><div id="statsByStore" class="stats-breakdown"></div></div>
+<div id="statsEmpty" class="placeholder hidden"><h2>За этот период покупок нет</h2><p>Завершай списки покупок — здесь появится статистика расходов.</p></div></section>
+<section id="feedbackPage" class="page hidden"><p class="eyebrow">ТВОЁ МНЕНИЕ ВАЖНО</p><h1>Отзывы о сайте</h1><p class="muted feedback-intro">Расскажи, что нравится в ShopList и что стоит улучшить.</p>
+<div class="visit-summary"><div class="visit-icon">↗</div><div><small>Открытий сайта на этом устройстве</small><strong id="visitCount">1</strong><p>Счётчик хранится в этом браузере и не показывает посещения других людей.</p></div></div>
+<div id="feedbackThanks" class="feedback-thanks hidden" role="status" aria-live="polite"><div class="thanks-mark">✓</div><h2>Спасибо за отзыв!</h2><p>Твой отзыв уже отправлен. Повторно оставить отзыв с этого браузера нельзя.</p></div>
+<form id="feedbackForm" class="feedback-form"><label for="feedbackNickname">Твой ник</label><input id="feedbackNickname" class="feedback-input" type="text" maxlength="32" placeholder="Например, Alex123" autocomplete="nickname" required><small class="feedback-field-note">Ник будет отображаться рядом с отзывом.</small><label for="feedbackRating">Оценка сайта</label><div class="rating-picker" role="radiogroup" aria-label="Оценка сайта"><label><input type="radio" name="feedbackRating" value="5" checked><span>★ 5</span></label><label><input type="radio" name="feedbackRating" value="4"><span>★ 4</span></label><label><input type="radio" name="feedbackRating" value="3"><span>★ 3</span></label><label><input type="radio" name="feedbackRating" value="2"><span>★ 2</span></label><label><input type="radio" name="feedbackRating" value="1"><span>★ 1</span></label></div>
+<label for="feedbackText">Твой отзыв</label><textarea id="feedbackText" maxlength="700" placeholder="Что можно улучшить? Чего не хватает?" required></textarea><div class="feedback-bottom"><small>До 700 символов</small><button class="primary" type="submit">Оставить отзыв</button></div><p class="feedback-local-note">Пока отзывы сохраняются только на этом устройстве. Чтобы их видели все пользователи, сайту понадобится онлайн-база данных.</p></form>
+<div class="feedback-list-head"><h2>Отзывы</h2><span id="feedbackCount">0</span></div><div id="feedbackList" class="feedback-list"></div><div id="feedbackEmpty" class="placeholder"><h2>Пока нет отзывов</h2><p>Будь первым — оставь своё мнение о ShopList.</p></div></section>
+<section id="settingsPage" class="page hidden"><p class="eyebrow">ПЕРСОНАЛИЗАЦИЯ</p><h1>Настройки</h1><div class="setting"><div><b>Оформление</b><p>Переключить светлую и тёмную тему.</p></div><button class="secondary" id="settingsThemeToggle">Сменить тему</button></div><div class="setting"><div><b>Локальные данные</b><p>Удалить все созданные магазины с этого устройства.</p></div><button class="danger" id="clearAll">Сбросить всё</button></div></section>
+</main></div>
+<nav class="bottom-nav"><button class="active" data-page="home">⌂<small>Главная</small></button><button data-page="history">◷<small>История</small></button><button data-page="stats">▥<small>Статистика</small></button><button data-page="feedback">♡<small>Отзывы</small></button><button data-page="settings">⚙<small>Настройки</small></button></nav>
+<dialog id="storeDialog"><form id="storeForm"><div class="dialog-top"><h2>Добавить магазин</h2><button type="button" id="closeDialog" class="close">×</button></div><label for="storeName">Название магазина</label><input id="storeName" maxlength="40" placeholder="Например, Пятёрочка" required><div class="dialog-actions"><button type="button" class="secondary" id="cancelDialog">Отмена</button><button class="primary" type="submit">Создать магазин</button></div></form></dialog>
+
+<dialog id="itemsDialog">
+  <form id="itemForm">
+    <div class="dialog-top"><div><p class="eyebrow">СПИСОК ПОКУПОК</p><h2 id="itemsTitle">Магазин</h2></div><button type="button" id="closeItems" class="close" aria-label="Закрыть">×</button></div>
+    <div class="item-toolbar"><span id="itemsCount">0 товаров</span><strong id="itemsSum">0 ₽</strong></div>
+    <div id="itemsList" class="items-list"></div>
+    <button type="button" id="showAddItem" class="add-item-button"><span>＋</span> Добавить товар</button>
+    <div id="itemEditor" class="item-editor hidden">
+      <label for="itemName">Название товара</label><input id="itemName" maxlength="80" placeholder="Например, молоко" required>
+      <div class="field-row"><div><label for="itemPrice">Цена за штуку (₽)</label><input id="itemPrice" type="number" min="0" step="0.01" placeholder="120" inputmode="decimal"></div><div><label for="itemQty">Количество</label><input id="itemQty" type="number" min="1" step="1" value="1" inputmode="numeric" required></div></div>
+      <div class="editor-actions"><button type="button" id="cancelItem" class="secondary">Отмена</button><button type="submit" class="primary" id="saveItem">Сохранить товар</button></div>
+    </div>
+  </form>
+</dialog>
+
+<script src="script.js"></script></body></html>
